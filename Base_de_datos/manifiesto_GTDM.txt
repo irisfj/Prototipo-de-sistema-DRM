@@ -1,0 +1,1 @@
+{'cifrado':'si','modo':'CTR','url':'','keyID':'GTDM','iv':'f757848abcdc7c94b7602eee2921629b'}
