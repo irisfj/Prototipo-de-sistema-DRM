@@ -1,4 +1,11 @@
-"""Cifrador de ficheros"""
+"""Cifrador de fichero licencias"""
+
+
+"""YA EJECUTADO SOLO SE EJECUTA UNA VEZ"""
+
+"""A menos que se añada ficheros cifrados y se haya actualizado
+el fichero licencias, entonces hay que cambiar el key_licencias
+del servidor de licencias"""
 
 
 #Importamos los paquetes
@@ -9,8 +16,8 @@ import os
 base_de_datos="Base_de_datos"
 # Nombre del archivo de entrada y salida
 
-fichero_salida = r"Base_de_datos\video.mp4.enc"
-ruta_licencias=r"Base_de_datos\video.mp4"
+fichero_salida = "Base_de_datos\licencias_cifrado.txt"
+ruta_licencias="Base_de_datos\licencias.txt"
 # Encontramos el fichero y cogemos su contenido para ver de cuantos bytes hacemos la llave
 with open(ruta_licencias, 'rb') as cman:
     contenido = cman.read()
@@ -24,6 +31,9 @@ print("\n",iv)
 
 
 #Ya lo hemos generado y han salido estas
+
+iv = b'l\x84\x1e\xa0\n\x91\xb1?9\x00\x85/\x9b\x1b\xbai'
+key=b'\xd7zX\x83\xaa\xed\xfd\xba\x11\xb28>WG\xf4\xb1'
 
 aesCipher_licencias = Cipher(algorithms.AES(key), modes.CBC(iv))
 aesDecryptor_licencias = aesCipher_licencias.decryptor()
